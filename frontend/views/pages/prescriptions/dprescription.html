@@ -1,0 +1,68 @@
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Doctor Prescription
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="dprescriptions.search_key">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+<div id="exportthis">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Prescription ID</th>
+                    <th>Doctor Name</th>
+                    <th>Patient Name</th>
+                    <th>Patient Age</th>
+                    <th>Date</th>
+                    <th>Available Drugs</th>
+                    <th>Unavailable Drugs</th>
+                </tr>
+                </thead>
+
+                <tbody ng-repeat="item in dprescriptions.dprescription | filter:dprescriptions.search_key">
+                    <tr>
+                        <td>{{item.dpId}}</td>
+                        <td>{{item.dName}}</td>
+                        <td>{{item.pName}}</td>
+                        <td>{{item.pAge}}</td>
+                        <td>{{item.date.substr(0,10)}}</td>
+                        <td>
+                            <table>
+                                <tr ng-repeat="available in item.availableDrugs">
+                                    <td style="text-align: left; padding-right: 10px; ">{{available.name}}</td>
+                                    <td style="text-align: center; padding-left: 10px;border-left: 2px solid #e1e1e1;">{{available.qty}}</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="color: red;">
+                            <table>
+                                <tr ng-repeat="unavailable in item.unavailableDrugs">
+                                    <td>{{unavailable.name}}</td>
+                                    <td style="text-align: center; padding-left: 10px;border-left: 2px solid #e1e1e1;">{{unavailable.qty}}</td>
+                                </tr>
+                            </table>
+                        </td>
+                       </tr>
+                </tbody>
+            </table>
+    <div class="raw">
+        <div class="col-sm-4">
+            <button class="btn btn-success" ng-click="dprescriptions.saveasPdf('exportthis')">Save as PDF</button>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+    </div>

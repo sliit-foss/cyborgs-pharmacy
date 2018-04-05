@@ -1,0 +1,73 @@
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
+                MENU
+            </button>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">
+                Cyborgs Pharmacy &nbsp;&nbsp;<small>{{dash.permission_title}}</small>
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown ">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span>
+                        &nbsp;&nbsp;{{dash.username}}
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a ng-click="dash.logout()">
+                                <span class="glyphicon glyphicon-log-out"></span>
+                                &nbsp;&nbsp; Logout
+                            </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="col-md-2" style="padding-left: 0;">
+        <div class="sidebar">
+            <ul class="nav nav-stacked">
+                <li class="active" ng-show="dash.chief_show"><a ui-sref=".drug"><i class="glyphicon glyphicon-home"></i>&nbsp;&nbsp;Home</a></li>
+                <!--add items to sidebar here-->
+                <h6 style="margin-left: 5px;" ng-show="dash.chief_show"><b>Drug/Inventory Management</b></h6>
+                <li class="divider" ng-show="dash.chief_show"><hr style="margin: 5px 0 5px 0;"></li>
+                <li class="active" ng-show="dash.chief_show"><a ui-sref=".addDrug"><i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;Add Drugs</a></li>
+                <li class="active" ng-show="dash.chief_show"><a ui-sref=".updateDrug"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Update Drugs</a></li>
+                <li class="active" ng-show="dash.chief_show"><a ui-sref=".addBatch"><i class="glyphicon glyphicon-th"></i>&nbsp;&nbsp;Add New Batch</a></li>
+                <h6 style="margin-left: 5px;" ng-show="dash.chief_show"><b>Reports and Analysis</b></h6>
+                <li class="divider" ng-show="dash.chief_show"><hr style="margin: 5px 0 5px 0;"></li>
+                <li class="active" ng-show="dash.chief_show"><a ui-sref=".expiredBatchsReport"><i class="glyphicon glyphicon-option-horizontal"></i>&nbsp;&nbsp;Expired Batches</a></li>
+                <li class="active" ng-show="dash.chief_show"><a ui-sref=".viewUsage"><i class="glyphicon glyphicon-equalizer"></i>&nbsp;&nbsp;View Usages</a></li>
+                <li class="active" ng-show="dash.chief_show"><a ui-sref=".batches"><i class="glyphicon glyphicon-th"></i>&nbsp;&nbsp;View batches</a></li>
+                <h6 style="margin-left: 5px;" ng-show="dash.doctor_show || dash.user_show"><b>Prescriptions</b></h6>
+                <li class="divider"><hr style="margin: 5px 0 5px 0;"></li>
+                <li class="active" ng-show="dash.doctor_show || dash.user_show"><a ui-sref=".dprescriptions"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;Doc Prescription</a></li>
+                <li class="active" ng-show="dash.doctor_show || dash.user_show"><a ui-sref=".phprescriptions"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;Pha Prescription</a></li>
+                <li class="active" ng-show="dash.doctor_show"><a ui-sref=".addDocPrescription"><i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;Add Doc Pres</a></li>
+                <li class="active" ng-show="dash.user_show"><a ui-sref=".addPhPrescription"><i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;Add Phar Pres</a></li>
+            </ul>
+        </div>
+    </div>
+<div class="col-md-10">
+    <div ui-view></div>
+</div>
+    <footer class="navbar navbar-fixed-bottom">
+        <hr class="divider">
+        <div class="container">
+            <p class="col-md-12">
+            Copyright &COPY; 2017 Team Cyborgs
+            </p>
+        </div>
+    </footer>

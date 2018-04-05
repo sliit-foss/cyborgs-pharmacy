@@ -1,0 +1,98 @@
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Drug Inventory
+        </div>
+        <div class="panel-body">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="col-md-3">
+                        <select class="form-control" name="singleSelect" id="singleSelect" ng-model="data.selected" ng-change="drug.setPagination(data.selected)">
+                            <option value="3">3</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Records Per Page</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-6">
+                        <p style="color: red;">Less than danger level</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="color: orange;">Less than reorder level</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <form class="form-inline text-right">
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="drug.search_key">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <br/>
+            <div id="exportthis">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Drug ID</th>
+                        <th>Drug Name</th>
+                        <th>Unit Type</th>
+                        <th>Drug Category</th>
+                        <th>Drug Price</th>
+                        <th>Drug Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-repeat="item in drug.drugs | pagination: drug.curPage * drug.selectedPage | limitTo:drug.selectedPage | filter:drug.search_key">
+                    <td>{{item.dId}}</td>
+                    <td>{{item.dName}}</td>
+                    <td>{{item.dUnit}}</td>
+                    <td>{{item.dCategory}}</td>
+                    <td>{{item.dPrice}}</td>
+                    <td ng-class='{red : item.dangerColor, orange: item.reorderColor}'>{{item.dQuantity}}</td>
+                    <td><a ui-sref="dashboard.mailSender"><button type="button" class="btn btn-primary" ng-click="drug.setRowDataToLocal(item)">Place Order</button></a></td>
+                    </tbody>
+                </table>
+            </div>
+            <div class="raw">
+                <div class="col-sm-4">
+                    <button class="btn btn-success" ng-click="drug.saveasPdf('exportthis')">Save as PDF</button>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <div class="pagination" ng-show="drug.drugs.length">
+                        <ul class="pagination">
+                            <li><button type="button" class="btn btn-primary" ng-disabled="drug.curPage==0" ng-click="drug.curPage=drug.curPage-1">&lt; PREV</button></li>
+                            <li><span>Page {{drug.curPage + 1 }} of {{ drug.drugs.length/drug.selectedPage | roundup }}</span></li>
+                            <li><button type="button" class="btn btn-primary" ng-disabled="drug.curPage>drug.drugs.length/drug.selectedPage-1" ng-click="drug.curPage = drug.curPage+1">NEXT &gt;</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <style type="text/css">
+            .red {
+                color: red;
+            }
+
+            .orange {
+                color: orange;
+            }
+        </style>
+    </div>
+
+

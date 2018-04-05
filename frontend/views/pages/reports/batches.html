@@ -1,0 +1,57 @@
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Batches
+    </div>
+    <div class="panel-body" >
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-inline">
+                    <div class="input-group">
+
+                        <input type="text" class="form-control" ng-model="batch.search_key">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+<br>
+        <div id="batchTabel">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Batch Number</th>
+                    <th>Drug Name</th>
+                    <th>Batch Type</th>
+                    <th>Added Date</th>
+                    <th>Manufacturer Date </th>
+                    <th>Expiration Date</th>
+                    <th>Quantity</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="i in reportsAllBatchs.allBatchs |  filter:batch.search_key">
+                <td>{{i.bId}}</td>
+                <td>{{i.bNumber}}</td>
+                <td>{{i.drugName}}</td>
+                <td>{{i.bType}}</td>
+                <td>{{i.bAdded.substr(0,10)}}</td>
+                <td>{{i.bManufac.substr(0,10)}}</td>
+                <td>{{i.bExpire.substr(0,10)}}</td>
+                <td>{{i.bQuantity}}</td>
+                </tbody>
+            </table>
+            <div class="raw">
+                <div class="col-sm-4">
+                    <button class="btn btn-success" ng-click="reportsAllBatchs.saveasPdf('batchTabel')">Save as PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

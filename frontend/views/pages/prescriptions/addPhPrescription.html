@@ -1,0 +1,95 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Add Prescription
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-horizontal" id="addPhaPrescriptionFrom" ng-submit="phprescriptions.addPHprescription(phprescriptions.addPHpre)">
+                    <div class="form-group">
+                        <label for="dName" class="col-md-4 control-label" >Doctor Name</label>
+                        <div class="col-md-8">
+                            <input type="text" id="dName" class="form-control" ng-model="phprescriptions.addPHpre.dName" placeholder="Doctor Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phName" class="col-md-4 control-label" >Pharmacist Name</label>
+                        <div class="col-md-8">
+                            <input type="text" id="phName" class="form-control" ng-model="phprescriptions.addPHpre.phName" placeholder="Pharmacist Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pName" class="col-md-4 control-label" >Patient Name</label>
+                        <div class="col-md-8">
+                            <input type="text" id="pName" class="form-control" ng-model="phprescriptions.addPHpre.pName" placeholder="Patient Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pAge" class="col-md-4 control-label" >Patient Age</label>
+                        <div class="col-md-8">
+                            <input type="text" id="pAge" class="form-control" ng-model="phprescriptions.addPHpre.pAge" placeholder="Patient Age">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date" class="col-md-4 control-label" >Date</label>
+                        <div class="col-md-8">
+                            <input type="text" id="date" class="form-control" ng-model="phprescriptions.addPHpre.date" placeholder="YYYY-MM-DD">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveredDrugs" class="col-md-4 control-label">Delivered Drugs</label>
+                        <div class="col-md-8">
+                            <select ng-model="temp.add"  id="deliveredDrugs" class="form-control">
+                                <option ng-repeat="name in phprescriptions.deliveredDrugs" value="{{name.dName}}">{{name.dName}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="qty"  class="col-md-4 control-label">Quantity</label>
+                        <div class="col-md-8">
+                            <input type="text" id="qty" class="form-control" ng-model="temp.qty" placeholder="Quantity">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4 col-md-offset-4">
+                            <button type="button" class="btn btn-default form-control" ng-click="addToList();">Add Drug</button>
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                </tr>
+                                </thead>
+
+                                <tbody ng-repeat="item in phprescriptions.addPHpre.deliveredDrugs">
+                                <tr>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.qty}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <div class="col-md-4"></div>
+                        <div class="col-md-2">
+                            <button type="submit" class="form-control btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                    <div clas="form-group">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8">
+                            <div class="row show-hide-message" ng-show="phprescriptions.successMessage">
+                                <div class="alert alert-success">{{phprescriptions.successMessage}}</div>
+                            </div>
+
+                            <div class="row show-hide-message" ng-show="phprescriptions.showErrorMsg">
+                                <div class="alert alert-danger">{{phprescriptions.showErrorMsg}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

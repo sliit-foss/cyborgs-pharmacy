@@ -1,0 +1,31 @@
+<div class="container" style="padding:50px 0">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center text-uppercase">
+                <h3>Cyborgs Pharmacy</h3>
+            </div>
+            <div class="panel-body">
+                <form ng-submit="login.doLogin(loginData)">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username" ng-model="login.loginData.username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" ng-model="login.loginData.password">
+                    </div>
+                    <button id="submitBtn" type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <!--message area-->
+        <div class="row show-hide-message" ng-show="login.successMessage">
+            <div class="alert alert-success">{{login.successMessage}}</div>
+        </div>
+
+        <div class="row show-hide-message" ng-show="login.errorMessage">
+            <div class="alert alert-danger">{{login.errorMessage}}</div>
+        </div>
+    </div>
+</div>
