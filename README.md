@@ -2,7 +2,7 @@
 
 
 # Introduction
-PMS - Pharmacy Management System is a system developed by Team Cyborgs to overcome the efficiency, security and reliability issues of the current manual system and in turn improving the overall productivity of a pharmacy.
+Cyborgs Pharmacy Management System is a system developed by Team Cyborgs to overcome the efficiency, security and reliability issues of the current manual system and in turn improving the overall productivity of a pharmacy.
 
 ## Components
   - User Management
@@ -37,3 +37,8 @@ Setup a http server. Suggested: http-server node module
 
 ## Running Tests
 ::TODO::
+
+# Mentors
+  - Ishan Yapa [1.1]: http://i.imgur.com/tXSoThF.png (https://twitter.com/IshanYapa)
+  - Nandun Bandara
+  - Isuru Prasad
