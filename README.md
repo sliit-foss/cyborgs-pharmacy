@@ -35,5 +35,5 @@ Instructions to setup the project in your machine are as follows.
 ## Frontend
 Setup a http server. Suggested: http-server node module
 
-## Running Tests (Protractor)
+## Running Tests
 ::TODO::
