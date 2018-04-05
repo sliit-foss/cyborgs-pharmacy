@@ -1,4 +1,4 @@
-[![Join the chat at https://gitter.im/sliit-foss-community/pms](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sliit-foss-community/pms?utm_source=share-link&utm_medium=link&utm_campaign=share-link) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/sliit-foss/pms/master/LICENSE) [![Waffle.io - Columns and their card count](https://badge.waffle.io/sliit-foss/pms.svg?columns=In%20Progress,Done)](https://waffle.io/sliit-foss/cyborgs-pharmacy)
+[![Join the chat at https://gitter.im/sliit-foss-community/pms](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sliit-foss-community/pms?utm_source=share-link&utm_medium=link&utm_campaign=share-link) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/sliit-foss/pms/master/LICENSE) [![Waffle.io - Columns and their card count](https://badge.waffle.io/sliit-foss/cyborgs-pharmacy.svg?columns=In%20Progress,Done)](https://waffle.io/sliit-foss/cyborgs-pharmacy)
 
 
 # Introduction
