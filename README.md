@@ -35,6 +35,19 @@ Instructions to setup the project in your machine are as follows.
 ## Frontend
 Setup a http server. Suggested: http-server node module
 
+## Default Credentials
+
+Username: user
+Password: pass
+
+### Doctor
+Username: doctor
+Password: pass
+
+### Administrator
+Username: admin
+Password: 123
+
 ## Running Tests
 ::TODO::
 
