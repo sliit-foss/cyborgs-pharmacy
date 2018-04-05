@@ -39,6 +39,6 @@ Setup a http server. Suggested: http-server node module
 ::TODO::
 
 # Mentors
-  - Ishan Yapa [1.1]: http://i.imgur.com/tXSoThF.png (https://twitter.com/IshanYapa)
+  - Ishan Yapa
   - Nandun Bandara
   - Isuru Prasad
