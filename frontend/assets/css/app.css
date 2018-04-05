@@ -1,0 +1,74 @@
+.error {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error-code {
+    bottom: 60%;
+    color: #2d353c;
+    font-size: 96px;
+    line-height: 100px;
+}
+
+.error-desc {
+    font-size: 12px;
+    color: #647788;
+}
+
+.m-b-10 {
+    margin-bottom: 10px!important;
+}
+
+.m-b-20 {
+    margin-bottom: 20px!important;
+}
+
+.m-t-20 {
+    margin-top: 20px!important;
+}
+
+/*show and hide*/
+.show-hide-message.ng-hide-remove{
+    -webkit-animation:zoomIn 0.3s both ease;
+    -moz-animation:zoomIn 0.3s both ease;
+    animation:zoomIn 0.3s both ease;
+}
+
+/*Animations*/
+.spinner{
+    -webkit-animation: spin 1s infinite;
+    -moz-animation:spin 1s infinite;
+    animation: spin 1s infinite;
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spin {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+
+@media (min-width: 768px) {
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #222;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+}

@@ -1,0 +1,96 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Add new Drug
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-horizontal" id="addDrugFrom" ng-submit="drug.addDrug(data)">
+                    <div class="form-group">
+                        <label for="drugCategory" class="col-md-4 control-label" >Drug Category</label>
+                        <div class="col-md-8">
+                            <select id="drugCategory" class="form-control" ng-model="data.dCategory" required>
+                                <option value="" disabled="disabled" selected="selected">Please select a type</option>
+                                <option ng-repeat="item in drug.categories" value="{{item}}">{{item}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="drugName" class="col-md-4 control-label" >Drug Name</label>
+                        <div class="col-md-8">
+                            <input type="text" id="drugName" class="form-control" ng-model="data.dName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="drugType" class="col-md-4 control-label" >Drug Type</label>
+                        <div class="col-md-8">
+                            <select id="drugType" class="form-control" ng-model="data.dUnit" required>
+                                <option value="" disabled="disabled" selected="selected">Please select a type</option>
+                                <option value="AMP">AMP</option>
+                                <option value="Tab">Tablet</option>
+                                <option value="Cap">Capsule</option>
+                                <option value="Spray">Spray</option>
+                                <option value="Liquid">Liquid</option>
+                                <option value="Drop">Drop</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="drugPrice" class="col-md-4 control-label" >Drug Price</label>
+                        <div class="col-md-8">
+                            <input type="text" id="drugPrice" class="form-control" ng-model="data.dPrice" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="drugRemark" class="col-md-4 control-label" >Remarks</label>
+                        <div class="col-md-8">
+                            <input type="text" id="drugRemark" class="form-control" ng-model="data.dRemarks">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="drugDanger" class="col-md-4 control-label" >Danger Level</label>
+                        <div class="col-md-8">
+                            <input type="text" id="drugDanger" class="form-control" ng-model="data.dangerLevel" required>
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="drugReorder" class="col-md-4 control-label" >Reorder Level</label>
+                        <div class="col-md-8">
+                            <input type="text" id="drugReorder" class="form-control" ng-model="data.reorderLevel" required>
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="drugDosage" class="col-md-4 control-label" >Dosage</label>
+                        <div class="col-md-8">
+                            <input type="text" id="drugDosage" class="form-control" ng-model="data.dDosage" required>
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="drugFrequency" class="col-md-4 control-label" >Frequency</label>
+                        <div class="col-md-8">
+                            <input type="text" id="drugFrequency" class="form-control" ng-model="data.dFrequency" required>
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <div class="col-md-4"></div>
+                        <div class="col-md-2">
+                            <button type="submit" class="form-control btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                    <div clas="form-group">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8">
+                            <div class="row show-hide-message" ng-show="drug.successMessage">
+                                <div class="alert alert-success">{{drug.successMessage}}</div>
+                            </div>
+
+                            <div class="row show-hide-message" ng-show="drug.errorMessage">
+                                <div class="alert alert-danger">{{drug.errorMessage}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

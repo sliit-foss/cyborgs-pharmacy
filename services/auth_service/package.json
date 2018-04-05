@@ -1,0 +1,32 @@
+{
+  "name": "cyborgs-pharmacy-auth-service",
+  "version": "1.0.0",
+  "description": "Pharmacy module to overcome the efficiency, security and reliability issues of the current manual system ",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha *.test.js",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ntb_h3c@gitlab.com/ntb_h3c/cyborgs-pharmacy.git"
+  },
+  "author": "Team Cyborgs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ntb_h3c/cyborgs-pharmacy/issues"
+  },
+  "homepage": "https://gitlab.com/ntb_h3c/cyborgs-pharmacy#README",
+  "dependencies": {
+    "angular-animate": "^1.6.4",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "chai": "^4.0.2",
+    "chai-http": "^3.0.0",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.0",
+    "mongoose": "^4.9.6"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,110 @@
+
+<div class="row">
+    <div class="col-md-1">
+        <div class="btn-toolbar">
+            <button class="btn btn-primary" ui-sref="admin.newUser">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <form class="form-inline">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="admin_user.search_key">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-search"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            &nbsp;&nbsp;&nbsp;&nbsp;<label>Search by:</label>
+            &nbsp;&nbsp;&nbsp;<div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-info" ng-click="admin_user.setFilter('username')">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Username
+            </label>
+            <label class="btn btn-info" ng-click="admin_user.setFilter('name')">
+                <input type="radio" name="options" id="option2" autocomplete="off" > Name
+            </label>
+            <label class="btn btn-info" ng-click="admin_user.setFilter('email')">
+                <input type="radio" name="options" id="option3" autocomplete="off" > Email
+            </label>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            &nbsp;&nbsp;<label>Order by:</label>
+            &nbsp;&nbsp;&nbsp;<div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-info" ng-click="admin_user.setOrderBy('username')">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Username
+            </label>
+            <label class="btn btn-info" ng-click="admin_user.setOrderBy('name')">
+                <input type="radio" name="options" id="option2" autocomplete="off" > Name
+            </label>
+            <label class="btn btn-info" ng-click="admin_user.setOrderBy('email')">
+                <input type="radio" name="options" id="option3" autocomplete="off" > Email
+            </label>
+        </div>
+        </div>
+    </div>
+</div>
+<table class="table table-hover" style="margin-top: 10px">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Permission</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in admin_user.users | filter: {'name':admin_user.search_key} | orderBy: admin_user.order">
+        <td>{{item.username}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.permission}}</td>
+        <td style="text-align: right;">
+            <a ng-click="admin_user.gotoUpdate(item.username)">
+                <button class="btn btn-primary">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                </button>
+            </a>
+            <a ng-click="admin_user.deleteUser(item.username)">
+                <button class="btn btn-danger">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Delete
+                </button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!--<div class="pagination">-->
+    <!--<ul>-->
+        <!--<li><a href="#">Prev</a></li>-->
+        <!--<li><a href="#">1</a></li>-->
+        <!--<li><a href="#">2</a></li>-->
+        <!--<li><a href="#">3</a></li>-->
+        <!--<li><a href="#">4</a></li>-->
+        <!--<li><a href="#">Next</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
+<!--<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+    <!--<div class="modal-header">-->
+        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+        <!--<h3 id="myModalLabel">Delete Confirmation</h3>-->
+    <!--</div>-->
+    <!--<div class="modal-body">-->
+        <!--<p class="error-text">Are you sure you want to delete the user?</p>-->
+    <!--</div>-->
+    <!--<div class="modal-footer">-->
+        <!--<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>-->
+        <!--<button class="btn btn-danger" data-dismiss="modal">Delete</button>-->
+    <!--</div>-->
+<!--</div>-->
+

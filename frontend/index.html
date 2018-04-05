@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyborgs Pharmacy Management System v1.0</title>
+
+    <!--jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!--Main Angular Files-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+
+    <!--JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link href="assets/css/app.css">
+    <link href="assets/css/sb-admin.css">
+    <!--ChartJS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+    <!--pdfmake-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.31/pdfmake.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+
+    <!--Angular Configurations-->
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+
+    <!--Angular Controllers-->
+    <script src="controllers/userController.js"></script>
+    <script src="controllers/dashboardController.js"></script>
+    <script src="controllers/adminController.js"></script>
+    <script src="controllers/drugController.js"></script>
+    <script src="controllers/reportsController.js"></script>
+    <script src="controllers/prescriptionController.js"></script>
+    <script src="controllers/mailController.js"></script>
+    <script src="controllers/batchController.js"></script>
+
+    <!--Angular Services-->
+    <script src="services/authServices.js"></script>
+    <script src="services/userServices.js"></script>
+    <script src="services/drugServices.js"></script>
+    <script src="services/reportsServices.js"></script>
+    <script src="services/dprescriptionServices.js"></script>
+    <script src="services/phprescriptionServices.js"></script>
+    <script src="services/mailServices.js"></script>
+    <script src="services/confService.js"></script>
+
+</head>
+<body ng-app="cyborgPharmacy" style="padding-bottom: 70px;">
+<div ui-view></div>
+
+
+</body>
+</html>
